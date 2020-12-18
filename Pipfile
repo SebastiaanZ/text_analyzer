@@ -1,0 +1,28 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+flake8 = "*"
+flake8-annotations = "*"
+flake8-bugbear = "*"
+flake8-docstrings = "*"
+flake8-import-order = "*"
+flake8-string-format = "*"
+flake8-tidy-imports = "*"
+flake8-todo = "*"
+pep8-naming = "*"
+coverage = "*"
+hypothesis = "*"
+coveralls = "*"
+
+
+[packages]
+
+[requires]
+python_version = "3.9"
+
+[scripts]
+lint = "python -m flake8"
+unittest = "python -m coverage run -m unittest"
