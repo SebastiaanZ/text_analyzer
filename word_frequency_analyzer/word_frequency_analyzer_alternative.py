@@ -71,3 +71,9 @@ class WordFrequencyAnalyzer:
 
         [(_most_common_word, frequency)] = frequencies.most_common(1)
         return frequency
+
+    @staticmethod
+    def calculate_frequency_for_word(text: str, word: str) -> int:
+        """Calculate the frequency for the given word."""
+        frequencies = WordFrequencyAnalyzer._word_frequencies(text)
+        return frequencies[word.lower()]
