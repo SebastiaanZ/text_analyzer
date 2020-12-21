@@ -1,8 +1,5 @@
-"""
-This file is used to install this package via the pip tool.
-It keeps track of versioning, as well as dependencies and
-what versions of python we support.
-"""
+"""This file is used to install this package using pip."""
+
 from setuptools import find_packages, setup
 
 
