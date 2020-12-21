@@ -18,6 +18,9 @@ __all__ = [
     "WordFrequencyAnalyzer",
 ]
 
+import collections
+import re
+
 
 class WordFrequency:
     """
@@ -46,4 +49,13 @@ class WordFrequency:
 class WordFrequencyAnalyzer:
     """
     A frequency analyzer that analyzes a text for word frequencies.
+
+    For this analyzer, words are considered to be sequences of
+    alphabetic characters that are uninterrupted by non-alphabetic
+    characters. The case of letters will be ignored ignored.
     """
+
+    @staticmethod
+    def _word_frequencies(text: str) -> collections.Counter[str, int]:
+        """Calculate the frequency for each word in the text."""
+        return collections.Counter(re.findall(r"[a-z]+", text.lower()))
