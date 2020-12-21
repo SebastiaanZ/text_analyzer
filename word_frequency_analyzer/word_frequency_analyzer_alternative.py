@@ -77,3 +77,21 @@ class WordFrequencyAnalyzer:
         """Calculate the frequency for the given word."""
         frequencies = WordFrequencyAnalyzer._word_frequencies(text)
         return frequencies[word.lower()]
+
+    @staticmethod
+    def calculate_most_frequent_n_words(text: str, n: int) -> list[WordFrequency]:
+        """
+        Calculate the most frequent `n` words in the text.
+
+        This method returns a list of WordFrequency tuples and uses
+        ascending alphabetical order in the case of ties.
+        """
+        if n < 0:
+            raise ValueError("requested word count `n` cannot be negative.")
+
+        frequencies = WordFrequencyAnalyzer._word_frequencies(text)
+
+        # Sort the (word, frequency) pairs primarily by frequency, and
+        # secondarily by their alphabetic order.
+        sorted_words = sorted(frequencies.items(), key=lambda item: (-item[1], item[0]))
+        return [WordFrequency(word, frequency) for word, frequency in sorted_words[:n]]
