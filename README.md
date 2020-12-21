@@ -5,7 +5,7 @@ _Analyze the frequency of words in a piece of text._
 
 **Note:** This is a programming assignment and not suited for general usage.
 
-- [Installation](#table-of-contents)
+- [Installation](#installation)
 - [Getting Started](#getting-started)
 - [Reference](#reference)
 
