@@ -49,7 +49,7 @@ jobs:
             ${{ runner.os }}
             ${{ env.PYTHONUSERBASE }}
             ${{ steps.python.outputs.python-version }}
-            ${{ hashFiles('./Pipfile', './Pipfile.lock') }}
+            ${{ hashFiles('repository//Pipfile', 'repository//Pipfile.lock') }}
 
       # Install the dependencies if we had a cache miss
       - name: Install dependencies using pipenv
