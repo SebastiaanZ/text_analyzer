@@ -59,3 +59,15 @@ class WordFrequencyAnalyzer:
     def _word_frequencies(text: str) -> collections.Counter[str, int]:
         """Calculate the frequency for each word in the text."""
         return collections.Counter(re.findall(r"[a-z]+", text.lower()))
+
+    @staticmethod
+    def calculate_highest_frequency(text: str) -> int:
+        """Calculate the highest word frequency in the text."""
+        frequencies = WordFrequencyAnalyzer._word_frequencies(text)
+        if not frequencies:
+            # If the text did not contain words, the
+            # highest frequency is 0.
+            return 0
+
+        [(_most_common_word, frequency)] = frequencies.most_common(1)
+        return frequency
